@@ -1,9 +1,11 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { Layout } from "../components";
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Layout></Layout>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Learn to <a href="https://nextjs.org">Next.js!</a>
