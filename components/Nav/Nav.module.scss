@@ -1,6 +1,29 @@
 .nav {
   width: 100vw;
   height: 11vh;
-  background: red;
-  position: sticky;
+  background: white;
+  position: fixed;
+  top: 0;
+  & .logoLink {
+    cursor: pointer;
+    display: block;
+    height: 40%;
+    width: auto;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (orientation: landscape) {
+  .nav {
+    .logoLink {
+      position: relative;
+      margin-left: 5%;
+      left: 0%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
 }
