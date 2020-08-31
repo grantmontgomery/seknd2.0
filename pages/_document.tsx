@@ -6,6 +6,8 @@ export default class CustomDocument extends Document {
       <Html>
         <Head>
           <meta content="Description goes here." />
+          <title>Seknd</title>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main></Main>
