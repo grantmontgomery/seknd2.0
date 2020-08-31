@@ -4,8 +4,13 @@ export default class CustomDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
-        <body></body>
+        <Head>
+          <meta content="Description goes here." />
+        </Head>
+        <body>
+          <Main></Main>
+          <NextScript></NextScript>
+        </body>
       </Html>
     );
   }
