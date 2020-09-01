@@ -1,0 +1,16 @@
+.partsIcon {
+  display: block;
+  position: absolute;
+  height: 6vh;
+  width: auto;
+  float: right;
+  right: 5%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@media (orientation: landscape) {
+  .partsIcon {
+    display: none;
+  }
+}

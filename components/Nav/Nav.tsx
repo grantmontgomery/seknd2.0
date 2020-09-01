@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { MobileHamburger } from "../MobileHamburger";
+import { PartsIcon } from "../PartsIcon";
 import css from "./Nav.module.scss";
 
 export const Nav: React.FC = () => {
@@ -24,6 +25,7 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
+      <PartsIcon></PartsIcon>
       <MobileHamburger></MobileHamburger>
     </nav>
   );

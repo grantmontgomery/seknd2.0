@@ -2,14 +2,21 @@ import * as React from "react";
 import css from "./PartsIcon.module.scss";
 
 export const PartsIcon: React.FC = () => {
+  const [state, setState] = React.useState<{ tapped: boolean }>({
+    tapped: false,
+  });
   return (
     <svg
+      onClick={() =>
+        state.tapped ? setState({ tapped: false }) : setState({ tapped: true })
+      }
       version="1.1"
       id="Layer_1"
       x="0px"
       y="0px"
       viewBox="0 0 290 290"
       enableBackground="new 0 0 290 290"
+      className={`${css.partsIcon} ${state.tapped ? css.colorSwitch : null}`}
     >
       <g>
         <path
