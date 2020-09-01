@@ -6,9 +6,6 @@ export const NavLinks: React.FC<{ location: string }> = ({ location }) => {
   return (
     <ul className={css.linksWrapper}>
       <li>
-        <Link href="/search">Search</Link>
-      </li>
-      <li>
         <Link href="/schedule">Schedule</Link>
       </li>
       <li>
