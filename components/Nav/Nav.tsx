@@ -15,13 +15,9 @@ export type NavState = {
 export const Nav: React.FC = () => {
   const [parts, displayParts] = React.useState<NavState>({ display: false });
   const [links, displayLinks] = React.useState<NavState>({ display: false });
-
-  let body: HTMLBodyElement | null = null;
-
-  React.useEffect(() => {
-    body = document.querySelector("body");
-  }, []);
-
+  const [searchBox, displaySearchBox] = React.useState<NavState>({
+    display: false,
+  });
   const applyTransitions: (modalWindow: NavState) => JSX.Element | null = (
     modalWindow
   ) => {
@@ -39,7 +35,7 @@ export const Nav: React.FC = () => {
           <MobileMenu></MobileMenu>
         </CSSTransition>
       ) : null;
-    } else {
+    } else if (modalWindow === parts) {
       return modalWindow.display ? (
         <CSSTransition
           timeout={250}
@@ -53,12 +49,28 @@ export const Nav: React.FC = () => {
           <DateParts location="nav"></DateParts>
         </CSSTransition>
       ) : null;
+    } else if (modalWindow === searchBox) {
+      return modalWindow.display ? (
+        <CSSTransition
+          timeout={250}
+          classNames={{
+            enter: `${css["search-enter"]}`,
+            enterActive: `${css["search-enter-active"]}`,
+            exit: `${css["search-exit"]}`,
+            exitActive: `${css["search-exit-active"]}`,
+          }}
+        >
+          {/* <DateParts location="nav"></DateParts> */}
+        </CSSTransition>
+      ) : null;
     }
   };
 
-  const stopWindowScroll: (scroll: boolean) => void = (scroll) => {
+  const stopWindowScroll: (stop: boolean) => void = (stop) => {
+    const body: HTMLBodyElement | null = document.querySelector("body");
+    console.log(body);
     if (body) {
-      return !scroll
+      return stop
         ? (body.style.overflowY = "hidden")
         : (body.style.overflowY = "scroll");
     }
@@ -91,7 +103,11 @@ export const Nav: React.FC = () => {
       ></MobileHamburger>
       <TransitionGroup>{applyTransitions(parts)}</TransitionGroup>
       <TransitionGroup>{applyTransitions(links)}</TransitionGroup>
-      <SearchIcon></SearchIcon>
+      <SearchIcon
+        displaySearchBox={displaySearchBox}
+        searchBox={searchBox}
+        stopWindowScroll={stopWindowScroll}
+      ></SearchIcon>
       <PartsIcon
         displayParts={displayParts}
         parts={parts}

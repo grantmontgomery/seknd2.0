@@ -16,7 +16,7 @@ export const MobileHamburger: React.FC<Props> = ({
 }) => {
   const handleClick: () => void = () => {
     if (links.display) {
-      return displayLinks({ display: false }), stopWindowScroll(true);
+      return displayLinks({ display: false }), stopWindowScroll(false);
     } else {
       return displayLinks({ display: true }), stopWindowScroll(true);
     }

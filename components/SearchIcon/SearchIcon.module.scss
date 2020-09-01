@@ -11,3 +11,9 @@
   width: auto;
   height: 7vw;
 }
+
+@media (orientation: landscape) {
+  .searchIcon {
+    height: 40%;
+  }
+}

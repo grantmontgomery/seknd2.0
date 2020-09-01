@@ -15,7 +15,7 @@ export const PartsIcon: React.FC<Props> = ({
 }) => {
   const handleClick: () => void = () => {
     if (parts.display) {
-      return displayParts({ display: false }), stopWindowScroll(true);
+      return displayParts({ display: false }), stopWindowScroll(false);
     } else {
       return displayParts({ display: true }), stopWindowScroll(true);
     }
