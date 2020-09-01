@@ -4,6 +4,9 @@
   position: fixed;
   display: flex;
   flex-flow: column nowrap;
+  float: left;
+  left: 0;
+  background: blue;
 }
 
 @media (orientation: landscape) {

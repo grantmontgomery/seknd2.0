@@ -8,33 +8,39 @@ import { SearchIcon } from "../SearchIcon";
 import { PartsIcon } from "../PartsIcon";
 import css from "./Nav.module.scss";
 
-interface State {
-  mobileParts: boolean;
-  mobileLinks: boolean;
-}
+export type NavState = {
+  [key: string]: boolean;
+};
 
 export const Nav: React.FC = () => {
-  const [state, setState] = React.useState<State>({
-    mobileParts: false,
-    mobileLinks: false,
-  });
-  const applyTransitions: (state: State) => JSX.Element | null = () => {
-    if (state.mobileLinks) {
-      return state.mobileLinks ? (
+  const [parts, displayParts] = React.useState<NavState>({ display: false });
+  const [links, displayLinks] = React.useState<NavState>({ display: false });
+
+  let body: HTMLBodyElement | null = null;
+
+  React.useEffect(() => {
+    body = document.querySelector("body");
+  }, []);
+
+  const applyTransitions: (modalWindow: NavState) => JSX.Element | null = (
+    modalWindow
+  ) => {
+    if (modalWindow === links) {
+      return modalWindow.display ? (
         <CSSTransition
           timeout={250}
           classNames={{
-            enter: `${css["mobileLinks-enter"]}`,
-            enterActive: `${css["mobileLinks-enter-active"]}`,
-            exit: `${css["mobileLinks-exit"]}`,
-            exitActive: `${css["mobileLinks-exit-active"]}`,
+            enter: `${css["links-enter"]}`,
+            enterActive: `${css["links-enter-active"]}`,
+            exit: `${css["links-exit"]}`,
+            exitActive: `${css["links-exit-active"]}`,
           }}
         >
           <MobileMenu></MobileMenu>
         </CSSTransition>
       ) : null;
-    } else if (state.mobileParts) {
-      return state.mobileLinks ? (
+    } else {
+      return modalWindow.display ? (
         <CSSTransition
           timeout={250}
           classNames={{
@@ -49,6 +55,15 @@ export const Nav: React.FC = () => {
       ) : null;
     }
   };
+
+  const stopWindowScroll: (scroll: boolean) => void = (scroll) => {
+    if (body) {
+      return !scroll
+        ? (body.style.overflowY = "hidden")
+        : (body.style.overflowY = "scroll");
+    }
+  };
+
   return (
     <nav className={css.nav}>
       <Link href="/">
@@ -69,10 +84,19 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
-      <MobileHamburger></MobileHamburger>
-      <TransitionGroup>{applyTransitions(state)}</TransitionGroup>
+      <MobileHamburger
+        displayLinks={displayLinks}
+        links={links}
+        stopWindowScroll={stopWindowScroll}
+      ></MobileHamburger>
+      <TransitionGroup>{applyTransitions(parts)}</TransitionGroup>
+      <TransitionGroup>{applyTransitions(links)}</TransitionGroup>
       <SearchIcon></SearchIcon>
-      <PartsIcon></PartsIcon>
+      <PartsIcon
+        displayParts={displayParts}
+        parts={parts}
+        stopWindowScroll={stopWindowScroll}
+      ></PartsIcon>
     </nav>
   );
 };
