@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import css from "./NavLinks.module.scss";
 
-export const NavLinks: React.FC = () => {
+export const NavLinks: React.FC<{ location: string }> = ({ location }) => {
   return (
     <ul className={css.linksWrapper}>
       <li>

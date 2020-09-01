@@ -1,0 +1,13 @@
+.mobileMenu {
+  width: 50vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@media (orientation: landscape) {
+  .mobileMenu {
+    display: none;
+  }
+}

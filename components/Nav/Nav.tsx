@@ -1,10 +1,55 @@
 import * as React from "react";
 import Link from "next/link";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { MobileHamburger } from "../MobileHamburger";
+import { MobileMenu } from "../MobileMenu";
+import { DateParts } from "../DateParts";
 import { PartsIcon } from "../PartsIcon";
 import css from "./Nav.module.scss";
 
+interface State {
+  mobileParts: boolean;
+  mobileLinks: boolean;
+}
+
 export const Nav: React.FC = () => {
+  const [state, setState] = React.useState<State>({
+    mobileParts: false,
+    mobileLinks: false,
+  });
+  const applyTransitions: (
+    state: State
+  ) => CSSTransition<HTMLElement> | null = () => {
+    if (state.mobileLinks) {
+      return state.mobileLinks ? (
+        <CSSTransition
+          timeout={250}
+          classNames={{
+            enter: `${css["mobileLinks-enter"]}`,
+            enterActive: `${css["mobileLinks-enter-active"]}`,
+            exit: `${css["mobileLinks-exit"]}`,
+            exitActive: `${css["mobileLinks-exit-active"]}`,
+          }}
+        >
+          <MobileMenu></MobileMenu>
+        </CSSTransition>
+      ) : null;
+    } else if (state.mobileParts) {
+      return state.mobileLinks ? (
+        <CSSTransition
+          timeout={250}
+          classNames={{
+            enter: `${css["mobileLinks-enter"]}`,
+            enterActive: `${css["mobileLinks-enter-active"]}`,
+            exit: `${css["mobileLinks-exit"]}`,
+            exitActive: `${css["mobileLinks-exit-active"]}`,
+          }}
+        >
+          <DateParts></DateParts>
+        </CSSTransition>
+      ) : null;
+    }
+  };
   return (
     <nav className={css.nav}>
       <Link href="/">
@@ -25,6 +70,7 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
+
       <PartsIcon></PartsIcon>
       <MobileHamburger></MobileHamburger>
     </nav>
