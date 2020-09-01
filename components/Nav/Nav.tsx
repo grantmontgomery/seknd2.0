@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { MobileHamburger } from "../MobileHamburger";
 import { MobileMenu } from "../MobileMenu";
 import { DateParts } from "../DateParts";
+import { SearchIcon } from "../SearchIcon";
 import { PartsIcon } from "../PartsIcon";
 import css from "./Nav.module.scss";
 
@@ -17,9 +18,7 @@ export const Nav: React.FC = () => {
     mobileParts: false,
     mobileLinks: false,
   });
-  const applyTransitions: (
-    state: State
-  ) => CSSTransition<HTMLElement> | null = () => {
+  const applyTransitions: (state: State) => JSX.Element | null = () => {
     if (state.mobileLinks) {
       return state.mobileLinks ? (
         <CSSTransition
@@ -39,13 +38,13 @@ export const Nav: React.FC = () => {
         <CSSTransition
           timeout={250}
           classNames={{
-            enter: `${css["mobileLinks-enter"]}`,
-            enterActive: `${css["mobileLinks-enter-active"]}`,
-            exit: `${css["mobileLinks-exit"]}`,
-            exitActive: `${css["mobileLinks-exit-active"]}`,
+            enter: `${css["parts-enter"]}`,
+            enterActive: `${css["parts-enter-active"]}`,
+            exit: `${css["parts-exit"]}`,
+            exitActive: `${css["parts-exit-active"]}`,
           }}
         >
-          <DateParts></DateParts>
+          <DateParts location="nav"></DateParts>
         </CSSTransition>
       ) : null;
     }
@@ -70,9 +69,10 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
-
-      <PartsIcon></PartsIcon>
       <MobileHamburger></MobileHamburger>
+      <TransitionGroup>{applyTransitions(state)}</TransitionGroup>
+      <SearchIcon></SearchIcon>
+      <PartsIcon></PartsIcon>
     </nav>
   );
 };

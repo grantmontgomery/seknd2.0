@@ -17,7 +17,7 @@ export const PartsIcon: React.FC = () => {
       y="0px"
       viewBox="0 0 290 290"
       enableBackground="new 0 0 290 290"
-      className={`${css.partsIcon} ${state.tapped ? css.colorSwitch : null}`}
+      className={css.partsIcon}
     >
       <g>
         <path

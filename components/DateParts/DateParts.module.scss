@@ -1,0 +1,38 @@
+.dateParts {
+  position: fixed;
+  float: left;
+  left: 0;
+  height: 89vh;
+  width: 50vw;
+  background: red;
+}
+
+@media (orientation: landscape) {
+  .dateParts {
+    width: 10vw;
+  }
+}
+
+.parts-enter {
+  transition: all 250ms ease-in-out;
+  opacity: 0;
+  transform: translate(100%, 0);
+
+  &.parts-enter-active {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.parts-exit {
+  transform: translate(0, 0);
+  transition: all 250ms ease-in-out;
+  opacity: 1;
+
+  &.parts-exit-active {
+    transition: all 250ms ease-in-out;
+    opacity: 0;
+
+    transform: translate(100%, 0);
+  }
+}
