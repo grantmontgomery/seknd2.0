@@ -1,5 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
+import { MobileHamburger } from "../MobileHamburger";
 import css from "./Nav.module.scss";
 
 export const Nav: React.FC = () => {
@@ -23,6 +24,7 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
+      <MobileHamburger></MobileHamburger>
     </nav>
   );
 };

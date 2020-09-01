@@ -1,9 +1,10 @@
 import * as React from "react";
 import Link from "next/link";
+import css from "./NavLinks.module.scss";
 
 export const NavLinks: React.FC = () => {
   return (
-    <ul>
+    <ul className={css.linksWrapper}>
       <li>
         <Link href="/search">Search</Link>
       </li>

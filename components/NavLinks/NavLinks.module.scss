@@ -1,0 +1,14 @@
+.linksWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: fit-content;
+  height: fit-content;
+  justify-content: space-between;
+  align-content: center;
+}
+
+@media (orientation: landscape) {
+  .linksWrapper {
+    flex-flow: row nowrap;
+  }
+}
