@@ -13,10 +13,24 @@
   & li {
     color: white;
   }
+  &.landscape {
+    display: none;
+  }
 }
 
 @media (orientation: landscape) {
   .linksWrapper {
-    flex-flow: row nowrap;
+    &.landscape {
+      display: flex;
+      margin-left: 10%;
+      margin-right: auto;
+      flex-flow: row nowrap;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: relative;
+      & li {
+        color: black;
+      }
+    }
   }
 }

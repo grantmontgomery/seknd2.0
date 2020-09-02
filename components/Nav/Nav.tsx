@@ -5,6 +5,7 @@ import { MobileHamburger } from "../MobileHamburger";
 import { MobileMenu } from "../MobileMenu";
 import { DateParts } from "../DateParts";
 import { SearchIcon } from "../SearchIcon";
+import { NavLinks } from "../NavLinks";
 import { PartsIcon } from "../PartsIcon";
 import css from "./Nav.module.scss";
 
@@ -96,6 +97,8 @@ export const Nav: React.FC = () => {
           </g>
         </svg>
       </Link>
+      <NavLinks orientation="landscape"></NavLinks>
+
       <MobileHamburger
         displayLinks={displayLinks}
         links={links}

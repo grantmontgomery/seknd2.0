@@ -7,6 +7,7 @@
   margin-right: 5%;
   // margin-left: auto;
   top: 50%;
+  cursor: pointer;
   transform: translate(0, -50%);
 }
 
@@ -24,8 +25,8 @@
   transition: 250ms ease-in-out;
 }
 
-@media (orientation: landscape) {
-  .partsIcon {
-    display: none;
-  }
-}
+// @media (orientation: landscape) {
+//   .partsIcon {
+//     display: none;
+//   }
+// }
