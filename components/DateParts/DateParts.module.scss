@@ -3,13 +3,24 @@
   float: right;
   right: 0;
   height: 100vh;
-  width: 50vw;
-  background: red;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  grid-template-areas: "modal parts";
+  & .partsWrapper {
+    grid-area: parts;
+    background: white;
+  }
+  & .modal {
+    grid-area: modal;
+    background: transparent;
+  }
 }
 
 @media (orientation: landscape) {
   .dateParts {
-    width: 20vw;
+    grid-template-columns: 80% 20%;
   }
 }
 
