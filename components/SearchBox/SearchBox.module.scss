@@ -3,9 +3,14 @@
   height: 75vh;
   position: fixed;
   top: 11vh;
-  background: green;
+  background: white;
+  display: grid;
+  box-shadow: 0 0.25vh 4vh #00000015;
   left: 50%;
   transform: translate(-50%);
+  grid-template-areas: "selector" ".";
+  grid-auto-columns: 100%;
+  grid-template-rows: 20% auto;
   z-index: 2;
 }
 
@@ -14,6 +19,8 @@
     left: 50%;
     transform: translate(-50%);
     width: 50vw;
+    grid-template-rows: 25% auto;
+
     height: 50vh;
   }
 }
