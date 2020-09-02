@@ -72,6 +72,19 @@ export const Nav: React.FC = () => {
     element
   ) => {
     if (element === "parts") {
+      return parts.display ? (
+        <CSSTransition
+          timeout={250}
+          classNames={{
+            enter: `${css["search-enter"]}`,
+            enterActive: `${css["search-enter-active"]}`,
+            exit: `${css["search-exit"]}`,
+            exitActive: `${css["search-exit-active"]}`,
+          }}
+        >
+          <SearchBox></SearchBox>
+        </CSSTransition>
+      ) : null;
     } else if (element === "links") {
     } else if (element === "searchBox") {
     }
