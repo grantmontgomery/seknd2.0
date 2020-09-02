@@ -15,20 +15,21 @@
     position: relative;
     transform: translate(0, -50%);
   }
-  & input {
-    border: none;
-    border-bottom: solid 0.2vh black;
-    width: 80%;
-    height: 6vw;
-  }
+
   & .to {
     grid-area: to;
     margin-left: 10%;
     margin-right: auto;
+    width: 80%;
+    border: none;
+    border-bottom: solid 0.2vh black;
   }
   & .from {
     grid-area: from;
     margin-left: 10%;
     margin-right: auto;
+    width: 80%;
+    border: none;
+    border-bottom: solid 0.2vh black;
   }
 }
