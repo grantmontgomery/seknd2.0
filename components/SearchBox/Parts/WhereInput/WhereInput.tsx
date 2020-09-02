@@ -7,11 +7,13 @@ export const WhereInput: React.FC = () => {
       <label htmlFor="">Where are you meeting?</label>
       <input type="text" placeholder="Los Angeles / 90015" />
       <select name="radius">
-        <option value="">Search radius...</option>
-        <option value="">Within 1 mile</option>
-        <option value="">Within 5 miles</option>
-        <option value="">Within 10 miles</option>
-        <option value="">Within 25 miles</option>
+        <optgroup>
+          <option value="">Search radius...</option>
+          <option value="">Within 1 mile</option>
+          <option value="">Within 5 miles</option>
+          <option value="">Within 10 miles</option>
+          <option value="">Within 25 miles</option>
+        </optgroup>
       </select>
     </div>
   );

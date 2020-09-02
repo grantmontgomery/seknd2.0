@@ -8,7 +8,7 @@
   grid-template-rows: 50% 50%;
   & label {
     grid-area: label;
-    font-size: 2.5vh;
+    font-size: 4vw;
     display: block;
     height: fit-content;
     width: fit-content;
@@ -19,19 +19,39 @@
   }
   & input {
     grid-area: text;
-    font-size: 2vh;
+    font-size: 3.5vw;
     width: 80%;
-    border: solid 0.2vh black;
+    border: none;
     margin-left: 10%;
-    height: 90%;
+    position: relative;
+    border-bottom: solid 0.2vh black;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 6vw;
+    &:focus {
+      outline: none;
+    }
   }
   & select {
     grid-area: radius;
-    font-size: 2vh;
+    font-size: 3.5vw;
     width: 80%;
-    border: solid 0.2vh black;
+    border: none;
+    border-bottom: solid 0.2vh black;
     margin-left: 10%;
-    height: 90%;
+    height: 6vw;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    &:focus {
+      outline: none;
+    }
+
+    & optgroup {
+      & option {
+        font-size: 3.5vw;
+      }
+    }
   }
 }
 
@@ -78,6 +98,9 @@
       margin-left: 2%;
 
       transform: translate(0, -50%);
+      & optgroup {
+        font-size: 2vh;
+      }
     }
   }
 }

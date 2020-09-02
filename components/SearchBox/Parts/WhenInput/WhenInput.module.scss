@@ -1,0 +1,34 @@
+.when {
+  grid-area: when;
+  display: grid;
+  grid-template-areas: "label label" "from to";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  & label {
+    grid-area: label;
+    font-size: 4vw;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 5%;
+    top: 50%;
+    position: relative;
+    transform: translate(0, -50%);
+  }
+  & input {
+    border: none;
+    border-bottom: solid 0.2vh black;
+    width: 80%;
+    height: 6vw;
+  }
+  & .to {
+    grid-area: to;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+  & .from {
+    grid-area: from;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+}
