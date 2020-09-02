@@ -14,6 +14,7 @@ export const SearchSelector: React.FC = () => {
     places: false,
     events: false,
   });
+
   return (
     <div className={css.searchSelector}>
       <button
@@ -21,6 +22,7 @@ export const SearchSelector: React.FC = () => {
         onMouseEnter={() =>
           setHighlight({ all: true, places: false, events: false })
         }
+        onClick={() => setSelect({ all: true, places: false, events: false })}
         onMouseLeave={() => setHighlight((state) => ({ ...state, all: false }))}
       >
         <div className={css.allSVG}>
@@ -77,6 +79,7 @@ export const SearchSelector: React.FC = () => {
         onMouseLeave={() =>
           setHighlight((state) => ({ ...state, places: false }))
         }
+        onClick={() => setSelect({ all: false, places: true, events: false })}
       >
         <svg
           height="512pt"
@@ -101,6 +104,7 @@ export const SearchSelector: React.FC = () => {
         onMouseLeave={() =>
           setHighlight((state) => ({ ...state, events: false }))
         }
+        onClick={() => setSelect({ all: false, places: false, events: true })}
       >
         <svg
           height="512pt"

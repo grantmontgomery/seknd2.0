@@ -8,9 +8,9 @@
   box-shadow: 0 0.25vh 4vh #00000015;
   left: 50%;
   transform: translate(-50%);
-  grid-template-areas: "selector" ".";
+  grid-template-areas: "selector" "where" ".";
   grid-auto-columns: 100%;
-  grid-template-rows: 20% auto;
+  grid-template-rows: 20% 20% auto;
   z-index: 2;
 }
 
@@ -18,9 +18,11 @@
   .searchBox {
     left: 50%;
     transform: translate(-50%);
-    width: 50vw;
+    width: 65vw;
     grid-template-rows: 25% auto;
-
     height: 50vh;
+    grid-template-areas: "selector selector" "where .";
+    grid-auto-columns: calc(200% / 3) calc(100% / 3);
+    grid-template-rows: 20% calc(80% / 3) calc(80% / 3) calc(80% / 3);
   }
 }
