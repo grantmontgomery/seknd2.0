@@ -1,0 +1,19 @@
+.searchBox {
+  width: 100vw;
+  height: 75vh;
+  position: fixed;
+  top: 11vh;
+  background: green;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+@media (orientation: landscape) {
+  .searchBox {
+    left: 50%;
+    transform: translate(-50%);
+    width: 50vw;
+    height: 50vh;
+  }
+}
