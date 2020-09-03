@@ -22,6 +22,8 @@
     grid-area: text;
     font-size: 1em;
     width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border: none;
     background: transparent;
 
@@ -83,7 +85,7 @@
     & input {
       font-size: 2vh;
       width: 30%;
-      border: solid 0.2vh black;
+
       min-width: 20vh;
       height: 25%;
       position: relative;
@@ -95,7 +97,6 @@
       font-size: 2vh;
       width: 25%;
       height: 25%;
-      border: solid 0.2vh black;
       position: relative;
       min-width: 15vh;
 

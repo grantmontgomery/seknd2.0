@@ -6,6 +6,7 @@ export const PlacesInput: React.FC = () => {
     <div className={css.places}>
       <label htmlFor="">What type of places are you looking for?</label>
       <input placeholder="Bars, Restaurants, Sushi, etc." type="text" />
+      <button>Search</button>
     </div>
   );
 };

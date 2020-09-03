@@ -7,7 +7,7 @@ export const EventsInput: React.FC = () => {
       <label htmlFor="">What type of events are you looking for?</label>
       <select name="" id="">
         <optgroup>
-          <option value="">Select a category (Optional)</option>
+          <option value="">Category (Optional)</option>
           <option value="All">All</option>
           <option value="Music">Music</option>
           <option value="Nightlife">Nightlife</option>

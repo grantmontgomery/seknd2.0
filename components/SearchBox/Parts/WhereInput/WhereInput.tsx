@@ -8,7 +8,7 @@ export const WhereInput: React.FC = () => {
       <input type="text" placeholder="Los Angeles / 90015" />
       <select name="radius">
         <optgroup>
-          <option value="">Search radius...</option>
+          <option value="">Radius...</option>
           <option value="">Within 1 mile</option>
           <option value="">Within 5 miles</option>
           <option value="">Within 10 miles</option>
