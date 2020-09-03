@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+
 import { Component } from "react";
 
 function MyApp({ Component, pageProps }) {
