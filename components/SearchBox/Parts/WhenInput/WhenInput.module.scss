@@ -1,14 +1,15 @@
 .when {
   grid-area: when;
   display: grid;
-  grid-template-areas: "label label" "from to";
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-areas: "label" "from" "to";
+  grid-template-columns: 100%;
+  grid-template-rows: calc(100% / 3) calc(100% / 3) calc(100% / 3);
   & label {
     grid-area: label;
-    font-size: 4vw;
+    font-size: 2.5vh;
     display: block;
     height: fit-content;
+    font-weight: bold;
     width: fit-content;
     margin-left: 5%;
     top: 50%;
@@ -22,11 +23,14 @@
     margin-right: auto;
     width: 80%;
     border: none;
+    font-size: 1em;
     border-bottom: solid 0.2vh black;
   }
   & .from {
     grid-area: from;
     margin-left: 10%;
+    font-size: 1em;
+
     margin-right: auto;
     width: 80%;
     border: none;

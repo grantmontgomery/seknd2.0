@@ -15,10 +15,13 @@
     height: 10vh;
     cursor: pointer;
     width: 25vw;
+    padding: 0;
     border-style: solid;
     display: flex;
     flex-flow: column nowrap;
     padding: 0;
+    text-align: center;
+    align-content: center;
     transition: 250ms ease-out;
     outline: none;
     &:focus {
