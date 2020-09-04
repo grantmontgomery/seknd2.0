@@ -4,15 +4,22 @@ export const DateParts: React.FC<{ location: string }> = ({ location }) => {
   return (
     <div className={css.dateParts}>
       <div className={css.partsWrapper}>
-        <label htmlFor="">Date Parts</label>
-        <div className={css.radioWrapper}>
-          <input type="radio" />
-          <input type="radio" />
-          <input type="radio" />
-          <input type="radio" />
-          <input type="radio" />
-        </div>
-        <input type="text" placeholder="Cant" />
+        <header>
+          <label htmlFor="">Date Parts</label>
+          <div className={css.colorInput}>
+            <input type="radio" />
+            <input type="radio" />
+            <input type="radio" />
+            <input type="radio" />
+            <input type="radio" />
+          </div>
+          <input
+            type="text"
+            placeholder="Another Idea?"
+            className={css.partInput}
+          />
+        </header>
+        <div className={css.partsList}></div>
       </div>
       <div className={css.modal}></div>
     </div>
